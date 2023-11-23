@@ -51,3 +51,36 @@ public class Lista_Manzana {
         this.principio = principio;
     }
 }
+
+public class LDobleT
+{
+    
+
+    void adicion(String titulo, String tipo, int ci)
+    {
+        NodoT nue = new NodoT();
+        nue.setTitulo(titulo);
+        nue.setTipo(tipo);
+        nue.setCiEst(ci);
+
+        if (getP()==null)
+            setP(nue);
+        else{
+            NodoT w=getP();
+            while( w.getSig()!=null)
+                w = w.getSig();
+            w.setSig(nue);
+            nue.setAnt(w);
+        }
+    }
+    public void mostrar()
+    {  NodoT recorrido = getP();
+        while (recorrido != null)
+        {
+            recorrido.mostrar();
+            recorrido = recorrido.getSig();
+        }
+    }
+
+}
+
