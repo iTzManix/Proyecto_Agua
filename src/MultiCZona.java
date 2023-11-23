@@ -45,10 +45,10 @@ public class MultiCZona {
     void mostrar() {
         int i;
         System.out.println("--------------------------");
-        System.out.println("DATOS DE LA MULTIPLE COLA");
+        System.out.println("DATOS DE LA MULTIPLE COLA DE ZONAS");
         System.out.println("--------------------------");
         for (i = 1; i <= nc; i++) {
-            System.out.println("\n\nDatos Cola Circular " + i + " ");
+            System.out.println("\n\nDatos Cola Circular Zona" + i + " ");
             cm[i].mostrar();
         }
     }

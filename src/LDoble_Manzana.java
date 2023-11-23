@@ -1,7 +1,7 @@
-public class Lista_Manzana {
+public class LDoble_Manzana {
     private NodoC principio;
 
-    public Lista_Manzana() {
+    public LDoble_Manzana() {
         this.principio = null;
     }
     public void mostrar(){
@@ -24,23 +24,19 @@ public class Lista_Manzana {
             node.leer();
         }
     }*/
-    public void adiPrincipio(Casa casa){
-        NodoC node = new NodoC();
-        node.setCasa(casa);
-        node.setSiguiente(getPrincipio());
-        setPrincipio(node);
-    }
-    public void adiFinal(Casa casa){
-        NodoC node = new NodoC();
-        node.setCasa(casa);
-        if(getPrincipio() == null){
-            setPrincipio(node);
-        }else {
-            NodoC nodeAux = getPrincipio();
-            while(nodeAux.getSiguiente() != null){
-                nodeAux = nodeAux.getSiguiente();
-            }
-            nodeAux.setSiguiente(node);
+    void adicion(Casa casa)
+    {
+        NodoC nodo = new NodoC();
+        nodo.setCasa(casa);
+
+        if (getPrincipio()==null)
+            setPrincipio(nodo);
+        else{
+            NodoC w = getPrincipio();
+            while (w.getSiguiente()!=null)
+                w = w.getSiguiente();
+            w.setSiguiente(nodo);
+            nodo.setAnterior(w);
         }
     }
     public NodoC getPrincipio() {
@@ -52,35 +48,4 @@ public class Lista_Manzana {
     }
 }
 
-public class LDobleT
-{
-    
-
-    void adicion(String titulo, String tipo, int ci)
-    {
-        NodoT nue = new NodoT();
-        nue.setTitulo(titulo);
-        nue.setTipo(tipo);
-        nue.setCiEst(ci);
-
-        if (getP()==null)
-            setP(nue);
-        else{
-            NodoT w=getP();
-            while( w.getSig()!=null)
-                w = w.getSig();
-            w.setSig(nue);
-            nue.setAnt(w);
-        }
-    }
-    public void mostrar()
-    {  NodoT recorrido = getP();
-        while (recorrido != null)
-        {
-            recorrido.mostrar();
-            recorrido = recorrido.getSig();
-        }
-    }
-
-}
 

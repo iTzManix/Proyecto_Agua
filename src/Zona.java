@@ -1,28 +1,28 @@
 public class Zona {
-    private Lista_Manzana listaM;
+    private LDoble_Manzana listaDM;
     private String nombre;
     private String represa;
 
-    public Zona(Lista_Manzana listaM, String nombre, String represa) {
-        this.listaM = listaM;
+    public Zona(LDoble_Manzana listaDM, String nombre, String represa) {
+        this.listaDM = listaDM;
         this.nombre = nombre;
         this.represa = represa;
     }
     //necesario colocar metodo leer()
     /*public void leer(){
-        listaM.leer();
+        listaDM.leer();
     }*/
     public void mostrar(){
-        this.listaM.mostrar();
+        this.listaDM.mostrar();
         System.out.println("Nombre de Zona = " + nombre);
         System.out.println("Represa = " + represa);
     }
-    public Lista_Manzana getListaM() {
-        return listaM;
+    public LDoble_Manzana getListaM() {
+        return listaDM;
     }
 
-    public void setListaM(Lista_Manzana listaM) {
-        this.listaM = listaM;
+    public void setListaM(LDoble_Manzana listaDM) {
+        this.listaDM = listaDM;
     }
 
     public String getNombre() {

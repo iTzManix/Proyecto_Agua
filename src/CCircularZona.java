@@ -54,7 +54,7 @@ public class CCircularZona {
         if (esvacia())
             System.out.println("Cola vacia xxx");
         else {
-            System.out.println("\n Datos de la Cola ");
+            System.out.println("\n Datos de Zonas ");
             CCircularZona aux = new CCircularZona();
             while (!esvacia()) {
                 elem = eliminar();
