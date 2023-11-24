@@ -11,7 +11,8 @@ public class NodoEmp
     }
     public void mostrar()
     {
-        System.out.printf("Nombre: %s\nTipo: %s",nombre,tipo);
+        System.out.println("\tEmpresa");
+        System.out.printf("Nombre: %s\nTipo: %s\n",nombre,tipo);
         this.listaS.mostrar();
     }
 

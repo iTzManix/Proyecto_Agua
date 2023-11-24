@@ -10,15 +10,20 @@ public class Casa {
     public Casa() {
     }
     public void mostrar(){
-        System.out.println("Propietario = " + propietario);
-        System.out.println("Servicio de Agua = " + servicioAgua);
+        System.out.println("\tCasa");
+        System.out.println("Propietario :" + propietario);
+        System.out.println("Servicio de Agua :" + servicioAgua);
     }
     public void leer() {
+        System.out.println("-------CASA-------");
+
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Ingresa el nombre del propietario: ");
+        System.out.print("Nombre del propietario: ");
         this.propietario = keyboard.nextLine();
-        System.out.print("Cuentas con servicio de Agua? SI/NO");
+        System.out.print("Cuentas con servicio de Agua? SI/NO: ");
         this.servicioAgua = (keyboard.nextLine()).equalsIgnoreCase("SI");
+        System.out.println("------------------");
+
     }
     public String getPropietario() {
         return propietario;

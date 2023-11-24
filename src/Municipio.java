@@ -18,13 +18,16 @@ public class Municipio {
     }
     public void mostrar()
     {
-        System.out.printf("Nombre: %s\n",nombre);
+        System.out.println("***********************Cuidemos el agua en el municipio de La Paz***********************\n");
+
+        System.out.printf("               Municipio %s               \n\n",nombre);
         this.multiZona.mostrar();
         this.pilaRepresa.mostrar();
         this.listaEmpresa.mostrar();
     }
     public void leer()
     {
+        System.out.println("-----------------MUNICIPIO-----------------");
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Nombre del municipio: ");
         this.nombre = keyboard.nextLine();
@@ -38,6 +41,7 @@ public class Municipio {
         int nroEmpresas= keyboard.nextInt();
         listaEmpresa = new LDoble_Empresa();
         this.listaEmpresa.leer(nroEmpresas);
+        System.out.println("\n\n");
     }
     public MultiCZona getMultiZona() {
         return multiZona;

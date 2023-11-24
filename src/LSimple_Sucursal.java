@@ -10,12 +10,16 @@ public class LSimple_Sucursal
     public void leer(int n){
         for (int i = 1; i <= n; i++)
         {
+            System.out.println("-------SUCURSAL-------");
+
             Scanner keyboard = new Scanner(System.in);
             System.out.printf("Ingresa donde se encuentra la sucursal%d:",i);
             String ubicacion = keyboard.nextLine();
             System.out.printf("Ingresa cuanto consumo de agua tiene la sucursal %d(0.0): ",i);
             double consumo = keyboard.nextDouble();
             adicion(ubicacion,consumo);
+            System.out.println("----------------------");
+
         }
     }
     void adicion(String ubicacion, double consumo)
@@ -35,6 +39,7 @@ public class LSimple_Sucursal
     }
     public void mostrar() {
         NodoSu vrecorrido = getPrincipio();
+        System.out.println("Lista de Sucursales");
         while (vrecorrido != null) {
             vrecorrido.mostrar();
             vrecorrido = vrecorrido.getSiguiente();

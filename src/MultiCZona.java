@@ -39,7 +39,7 @@ public class MultiCZona {
         int i;
         nc = n;
         for (i = 1; i <= n; i++) {
-            System.out.printf("Nro. elementos de la Cola Circular de Zonas %d:", i);
+            System.out.printf("Nro. de zonas de la Cola Circular de Zonas %d:", i);
             Scanner keyboard = new Scanner(System.in);
             int numeroE = keyboard.nextInt();
             cm[i].llenar(numeroE);
@@ -51,7 +51,7 @@ public class MultiCZona {
         System.out.println("DATOS DE LA MULTIPLE COLA DE ZONAS");
         System.out.println("--------------------------");
         for (i = 1; i <= nc; i++) {
-            System.out.println("\n\nDatos Cola Circular Zona" + i + " ");
+            System.out.println("Datos Cola Circular Zona " + i + " ");
             cm[i].mostrar();
         }
     }

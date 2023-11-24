@@ -56,7 +56,7 @@ public class CCircularZona {
         if (esvacia())
             System.out.println("Cola vacia xxx");
         else {
-            System.out.println("\n Datos de Zonas ");
+            System.out.println("\n\tDatos de las Zonas");
             CCircularZona aux = new CCircularZona();
             while (!esvacia()) {
                 elem = eliminar();
@@ -74,7 +74,7 @@ public class CCircularZona {
     {
         for (int i = 1 ; i <= n ; i++)
         {
-            System.out.printf("Nro. de manzanas de la Zona %d: ", i);
+            System.out.printf("Nro. de casas de la Zona %d: ", i);
             Scanner keyboard = new Scanner(System.in);
             int numeroListas = keyboard.nextInt();
             Zona zonax = new Zona();

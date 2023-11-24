@@ -9,6 +9,7 @@ public class LDoble_Empresa
     }
     public void mostrar(){
         NodoEmp node = getPrincipio();
+        System.out.println("----Lista de Empresas-----");
         while(node != null){
             node.mostrar();
             node = node.getSiguiente();
@@ -35,16 +36,22 @@ public class LDoble_Empresa
 
         for (int i = 1; i <= n; i++)
         {
+            System.out.println("-------EMPRESA-------");
+
             Scanner keyboard = new Scanner(System.in);
             System.out.printf("Nombre de la empresa: %d:",i);
             String empresa = keyboard.nextLine();
-            System.out.printf("Que tipo de empresa es %d(0.0): ",i);
+            System.out.printf("Que tipo de empresa es %d: ",i);
             String tipo = keyboard.nextLine();
             System.out.printf("Nro de sucursales de la empresa %d: ",i);
             int nroSucursales = keyboard.nextInt();
+            System.out.println("---------------------");
+
             listaSucursales = new LSimple_Sucursal();
             listaSucursales.leer(nroSucursales);
             adicion(empresa, tipo, listaSucursales);
+
+
         }
     }
 

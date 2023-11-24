@@ -9,15 +9,20 @@ public class Represa {
     public Represa() {
     }
     public void mostrar(){
-        System.out.println("Nombre Represa = " + nombre);
-        System.out.println("Cantidad = " + cantidad);
+        System.out.println("**********");
+        System.out.println("Nombre Represa: " + nombre);
+        System.out.println("Cantidad: " + cantidad);
+        System.out.println("**********");
     }
     public void leer(){
+        System.out.println("-------REPRESA-------");
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Registra el nombre de la represa: ");
+        System.out.print("Nombre de la Represa: ");
         nombre = keyboard.nextLine();
         System.out.print("Cantidad de agua que hay en la represa: ");
         cantidad = keyboard.nextInt();
+        System.out.println("---------------------");
+
     }
     public String getNombre() {
         return nombre;

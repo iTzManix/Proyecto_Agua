@@ -46,9 +46,9 @@ public class PilaRepresa {
     void mostrar() {
         Represa elem;
         if (esvacia())
-            System.out.println("PilaProducto vacia");
+            System.out.println("Pila Represa vacia :(");
         else {
-            System.out.println("\n Datos de la PilaProducto ");
+            System.out.println("\n\t Datos de la Pila Represa");
             PilaRepresa aux = new PilaRepresa();
             while (!esvacia()) {
                 elem = eliminar();

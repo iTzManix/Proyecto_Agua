@@ -15,18 +15,23 @@ public class Zona {
     }
     //necesario colocar metodo leer()
     public void leer(int n){
+        System.out.println("-------ZONAS-------");
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Ingresa el nombre de la zona: ");
+        System.out.print("Nombre de la Zona: ");
         this.nombre = keyboard.nextLine();
-        System.out.print("Cual es el nombre de la represa?");
+        System.out.print("Nombre de la Represa: ");
         this.represa = (keyboard.nextLine());
+        System.out.println("-------------------");
+
         listaDM.leer(n);
+
     }
     public void mostrar(){
-        System.out.printf("Nombre de Zona: %s\nRepresa: %s",nombre, represa);
-//        System.out.println("Nombre de Zona = " + nombre);
-//        System.out.println("Represa = " + represa);
+
+        System.out.printf("******Zona %s******\nRepresa %s\n",nombre, represa);
+
         this.listaDM.mostrar();
+        System.out.println("************");
 
     }
     public LDoble_Manzana getListaM() {
