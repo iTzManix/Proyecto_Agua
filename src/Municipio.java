@@ -27,7 +27,7 @@ public class Municipio {
         System.out.print("Nro de Represas de Municipio: ");
         int nroRepresas = keyboard.nextInt();
         this.pilaRepresa.llenar(nroRepresas);
-        System.out.print("Nro de Colas de Municipio: ");
+        System.out.print("Nro de Zonas de Municipio: ");
         int nroColas= keyboard.nextInt();
         this.multiZona.llenar(nroColas);
         System.out.print("Nro de Empresas del Municipio: ");

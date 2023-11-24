@@ -80,9 +80,9 @@ public class PilaRepresa {
     }
     void llenar (int n)
     {
-        Represa represax = null;
         for (int i = 1 ; i <= n ; i++)
         {
+            Represa represax = new Represa();
             represax.leer();
             adicionar(represax);
         }

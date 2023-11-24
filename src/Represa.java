@@ -6,6 +6,8 @@ public class Represa {
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
+    public Represa() {
+    }
     public void mostrar(){
         System.out.println("Nombre Represa = " + nombre);
         System.out.println("Cantidad = " + cantidad);
