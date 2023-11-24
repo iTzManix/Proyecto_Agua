@@ -13,6 +13,8 @@ public class Municipio {
         this.listaEmpresa = listaEmpresa;
     }
     public Municipio() {
+        pilaRepresa = new PilaRepresa();
+        multiZona = new MultiCZona();
     }
     public void mostrar()
     {
@@ -35,8 +37,6 @@ public class Municipio {
         System.out.print("Nro de Empresas del Municipio: ");
         int nroEmpresas= keyboard.nextInt();
         this.listaEmpresa.leer(nroEmpresas);
-
-
     }
     public MultiCZona getMultiZona() {
         return multiZona;

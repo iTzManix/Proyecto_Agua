@@ -81,12 +81,13 @@ public class PilaRepresa {
     void llenar (int n)
     {
         for (int i = 1 ; i <= n ; i++)
-        {
+        {   if (n <= max +1){
             Represa represax = new Represa();
             represax.leer();
             adicionar(represax);
-        }
 
+        }
+        }
     }
 
 }
