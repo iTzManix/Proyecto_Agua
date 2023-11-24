@@ -74,7 +74,7 @@ public class CCircularZona {
     {
         for (int i = 1 ; i <= n ; i++)
         {
-            System.out.printf("Nro. de casas de la Zona %d: ", i);
+            System.out.printf("Nro. de Zonas %d: ", i);
             Scanner keyboard = new Scanner(System.in);
             int numeroListas = keyboard.nextInt();
             Zona zonax = new Zona();

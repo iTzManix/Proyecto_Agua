@@ -1,44 +1,52 @@
+import java.util.*;
 import java.util.Scanner;
 
 public class Zona {
-    private LDoble_Manzana listaDM;
+    private List<LDoble_Manzana> listaDM = new ArrayList<>();
     private String nombre;
     private String represa;
 
-    public Zona(LDoble_Manzana listaDM, String nombre, String represa) {
-        this.listaDM = listaDM;
+    public Zona(String nombre, String represa) {
         this.nombre = nombre;
         this.represa = represa;
     }
+
     public Zona() {
-        listaDM = new LDoble_Manzana();
     }
-    //necesario colocar metodo leer()
-    public void leer(int n){
-        System.out.println("-------ZONAS-------");
-        Scanner keyboard = new Scanner(System.in);
+
+    public void leer(int nn) {
+        System.out.println("-------Zonas:-------");
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Nombre de la Zona: ");
-        this.nombre = keyboard.nextLine();
+        this.nombre = scanner.nextLine();
         System.out.print("Nombre de la Represa: ");
-        this.represa = (keyboard.nextLine());
+        this.represa = scanner.nextLine();
+        System.out.print("Cuantas Manzanas tiene la zona: ");
         System.out.println("-------------------");
-
-        listaDM.leer(n);
-
+        for (int i = 0; i < nn; i++) {
+            System.out.println("Manzana: " + i+1);
+            LDoble_Manzana manzana = new LDoble_Manzana();
+            System.out.print("cuantas casas tiene la manzana:");
+            int k = scanner.nextInt();
+            manzana.leer(k);
+            listaDM.add(manzana);
+        }
     }
-    public void mostrar(){
 
-        System.out.printf("******Zona %s******\nRepresa %s\n",nombre, represa);
-
-        this.listaDM.mostrar();
+    public void mostrar() {
+        System.out.printf("******Zona %s******\nRepresa %s\n", nombre, represa);
+        for (LDoble_Manzana manzana : listaDM) {
+            manzana.mostrar();
+        }
         System.out.println("************");
-
     }
-    public LDoble_Manzana getListaM() {
+
+
+    public List<LDoble_Manzana> getListaDM() {
         return listaDM;
     }
 
-    public void setListaM(LDoble_Manzana listaDM) {
+    public void setListaDM(List<LDoble_Manzana> listaDM) {
         this.listaDM = listaDM;
     }
 
