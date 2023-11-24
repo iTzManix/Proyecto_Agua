@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LDoble_Empresa
 {
     private NodoEmp principio;
@@ -26,6 +28,22 @@ public class LDoble_Empresa
                 w = w.getSiguiente();
             w.setSiguiente(nodo);
             nodo.setAnterior(w);
+        }
+    }
+    public void leer(int n){
+        LSimple_Sucursal listaSucursales = null;
+
+        for (int i = 1; i <= n; i++)
+        {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.printf("Nombre de la empresa: %d:",i);
+            String empresa = keyboard.nextLine();
+            System.out.printf("Que tipo de empresa es %d(0.0): ",i);
+            String tipo = keyboard.nextLine();
+            System.out.printf("Nro de sucursales de la empresa %d: ",i);
+            int nroSucursales = keyboard.nextInt();
+            listaSucursales.leer(nroSucursales);
+            adicion(empresa, tipo, listaSucursales);
         }
     }
 

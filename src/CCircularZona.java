@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class CCircularZona {
     private int max = 99;
     private Zona vecZona[] = new Zona[max + 1];
@@ -67,5 +69,18 @@ public class CCircularZona {
                 adicionar(elem);
             }
         }
+    }
+    void llenar (int n)
+    {
+        Zona zonax = null;
+        for (int i = 1 ; i <= n ; i++)
+        {
+            System.out.printf("Nro. de manzanas de la Zona %d: ", i);
+            Scanner keyboard = new Scanner(System.in);
+            int numeroListas = keyboard.nextInt();
+            zonax.leer(numeroListas);
+            adicionar(zonax);
+        }
+
     }
 }

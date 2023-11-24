@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PilaRepresa {
     private int max;
     private Represa v_Represa[] = new Represa[max + 1];
@@ -76,5 +78,16 @@ public class PilaRepresa {
         while (!a.esvacia())
             adicionar(a.eliminar());
     }
+    void llenar (int n)
+    {
+        Represa represax = null;
+        for (int i = 1 ; i <= n ; i++)
+        {
+            represax.leer();
+            adicionar(represax);
+        }
+
+    }
+
 }
 

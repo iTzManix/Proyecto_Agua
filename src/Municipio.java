@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Municipio {
     private MultiCZona multiZona;
     private PilaRepresa pilaRepresa;
@@ -16,6 +18,23 @@ public class Municipio {
         this.multiZona.mostrar();
         this.pilaRepresa.mostrar();
         this.listaEmpresa.mostrar();
+    }
+    public void leer()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Nombre del municipio: ");
+        this.nombre = keyboard.nextLine();
+        System.out.print("Nro de Represas de Municipio: ");
+        int nroRepresas = keyboard.nextInt();
+        this.pilaRepresa.llenar(nroRepresas);
+        System.out.print("Nro de Colas de Municipio: ");
+        int nroColas= keyboard.nextInt();
+        this.multiZona.llenar(nroColas);
+        System.out.print("Nro de Empresas del Municipio: ");
+        int nroEmpresas= keyboard.nextInt();
+        this.listaEmpresa.leer(nroEmpresas);
+
+
     }
     public MultiCZona getMultiZona() {
         return multiZona;

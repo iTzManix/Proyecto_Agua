@@ -11,19 +11,14 @@ public class LDoble_Manzana {
             node = node.getSiguiente();
         }
     }
-    /*public void leer(){
-        NodoC node = getPrincipio();
-        if(node == null){
-            node.leer();
-            setPrincipio(node);
-        }else {
-            NodoC nodeAux = new NodoC();
-            while (node.getSiguiente() !=null){
-                node = node.getSiguiente();
-            }
-            node.leer();
+    public void leer(int n){
+        for (int i = 1; i <= n; i++)
+        {
+            Casa casax = null;
+            casax.leer();
+            adicion(casax);
         }
-    }*/
+    }
     void adicion(Casa casa)
     {
         NodoC nodo = new NodoC();

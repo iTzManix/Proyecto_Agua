@@ -12,7 +12,9 @@ public class Represa {
     }
     public void leer(){
         Scanner keyboard = new Scanner(System.in);
+        System.out.print("Registra el nombre de la represa: ");
         nombre = keyboard.nextLine();
+        System.out.print("Cantidad de agua que hay en la represa: ");
         cantidad = keyboard.nextInt();
     }
     public String getNombre() {

@@ -13,7 +13,10 @@ public class Casa {
     }
     public void leer() {
         Scanner keyboard = new Scanner(System.in);
-        propietario = keyboard.nextLine();
+        System.out.print("Ingresa el nombre del propietario: ");
+        this.propietario = keyboard.nextLine();
+        System.out.print("Cuentas con servicio de Agua? SI/NO");
+        this.servicioAgua = (keyboard.nextLine()).equalsIgnoreCase("SI");
     }
     public String getPropietario() {
         return propietario;

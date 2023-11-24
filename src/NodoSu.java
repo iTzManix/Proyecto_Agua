@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class NodoSu
 {
     private String ubicacion;
@@ -11,7 +13,6 @@ public class NodoSu
     {
         System.out.printf("Ubicacion: %s\nConsumo: %s\n",ubicacion, consumo);
     }
-
 
     public String getUbicacion() {
         return ubicacion;

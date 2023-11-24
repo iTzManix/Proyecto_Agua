@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MultiCZona {
     CCircularZona cm[] = new CCircularZona[99];
     int nc;
@@ -23,25 +25,26 @@ public class MultiCZona {
         if (!cm[i].esllena())
             cm[i].adicionar(elem);
         else
-            System.out.print("Cola " + i + " esta llena");
+            System.out.print("La MultiCola de Zonas " + i + " esta llena");
     }
     Zona eliminar(int i) {
         Zona e = null;
         if (!cm[i].esvacia())
             e = cm[i].eliminar();
         else
-            System.out.print("Cola " + i + " esta vacia");
+            System.out.print("La MultiCola de Zonas " + i + " esta vacia");
         return e;
     }
-    /*void llenar(int n) {
-        int i, m;
+    void llenar(int n) {
+        int i;
         nc = n;
         for (i = 1; i <= n; i++) {
-            System.out.print("Nro. elementos Cola Simple " + i + " :");
-            m = leer.datoInt();
-            cm[i].llenar(m);
+            System.out.printf("Nro. elementos de la Cola Circular de Zonas %d:", i);
+            Scanner keyboard = new Scanner(System.in);
+            int numeroE = keyboard.nextInt();
+            cm[i].llenar(numeroE);
         }
-    }*/
+    }
     void mostrar() {
         int i;
         System.out.println("--------------------------");
