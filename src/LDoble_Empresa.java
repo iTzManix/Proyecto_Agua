@@ -42,6 +42,7 @@ public class LDoble_Empresa
             String tipo = keyboard.nextLine();
             System.out.printf("Nro de sucursales de la empresa %d: ",i);
             int nroSucursales = keyboard.nextInt();
+            listaSucursales = new LSimple_Sucursal();
             listaSucursales.leer(nroSucursales);
             adicion(empresa, tipo, listaSucursales);
         }

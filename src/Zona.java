@@ -11,6 +11,7 @@ public class Zona {
         this.represa = represa;
     }
     public Zona() {
+        listaDM = new LDoble_Manzana();
     }
     //necesario colocar metodo leer()
     public void leer(int n){

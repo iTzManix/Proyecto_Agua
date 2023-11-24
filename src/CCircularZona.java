@@ -72,12 +72,12 @@ public class CCircularZona {
     }
     void llenar (int n)
     {
-        Zona zonax = null;
         for (int i = 1 ; i <= n ; i++)
         {
             System.out.printf("Nro. de manzanas de la Zona %d: ", i);
             Scanner keyboard = new Scanner(System.in);
             int numeroListas = keyboard.nextInt();
+            Zona zonax = new Zona();
             zonax.leer(numeroListas);
             adicionar(zonax);
         }

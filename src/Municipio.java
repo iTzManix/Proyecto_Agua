@@ -36,6 +36,7 @@ public class Municipio {
         this.multiZona.llenar(nroColas);
         System.out.print("Nro de Empresas del Municipio: ");
         int nroEmpresas= keyboard.nextInt();
+        listaEmpresa = new LDoble_Empresa();
         this.listaEmpresa.leer(nroEmpresas);
     }
     public MultiCZona getMultiZona() {

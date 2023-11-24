@@ -5,9 +5,6 @@ public class NodoC {
         this.anterior = null;
         this.siguiente = null;
     }
-    /*public void leer(){
-        this.casa.leer();
-    }*/
     public Casa getCasa() {
         return casa;
     }

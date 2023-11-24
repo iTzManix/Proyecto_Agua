@@ -14,7 +14,7 @@ public class LDoble_Manzana {
     public void leer(int n){
         for (int i = 1; i <= n; i++)
         {
-            Casa casax = null;
+            Casa casax = new Casa();
             casax.leer();
             adicion(casax);
         }

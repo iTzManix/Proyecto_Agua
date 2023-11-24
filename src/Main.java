@@ -4,5 +4,6 @@ public class Main
     {
         Municipio municipio = new Municipio();
         municipio.leer();
+        municipio.mostrar();
     }
 }

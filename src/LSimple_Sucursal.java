@@ -14,7 +14,7 @@ public class LSimple_Sucursal
             System.out.printf("Ingresa donde se encuentra la sucursal%d:",i);
             String ubicacion = keyboard.nextLine();
             System.out.printf("Ingresa cuanto consumo de agua tiene la sucursal %d(0.0): ",i);
-            Double consumo = keyboard.nextDouble();
+            double consumo = keyboard.nextDouble();
             adicion(ubicacion,consumo);
         }
     }
