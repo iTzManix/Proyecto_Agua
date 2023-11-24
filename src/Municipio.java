@@ -12,6 +12,8 @@ public class Municipio {
         this.nombre = nombre;
         this.listaEmpresa = listaEmpresa;
     }
+    public Municipio() {
+    }
     public void mostrar()
     {
         System.out.printf("Nombre: %s\n",nombre);

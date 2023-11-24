@@ -7,6 +7,8 @@ public class Casa {
         this.propietario = propietario;
         this.servicioAgua = servicioAgua;
     }
+    public Casa() {
+    }
     public void mostrar(){
         System.out.println("Propietario = " + propietario);
         System.out.println("Servicio de Agua = " + servicioAgua);

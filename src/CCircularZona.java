@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class CCircularZona {
-    private int max = 99;
+    private int max = 1000;
     private Zona vecZona[] = new Zona[max + 1];
     private int ini, fin;
 

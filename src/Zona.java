@@ -10,6 +10,8 @@ public class Zona {
         this.nombre = nombre;
         this.represa = represa;
     }
+    public Zona() {
+    }
     //necesario colocar metodo leer()
     public void leer(int n){
         Scanner keyboard = new Scanner(System.in);

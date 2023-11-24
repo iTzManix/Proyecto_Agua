@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class PilaRepresa {
-    private int max;
+    private int max = 1000;
     private Represa v_Represa[] = new Represa[max + 1];
     private int tope;
 
