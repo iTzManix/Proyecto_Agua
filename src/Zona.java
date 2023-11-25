@@ -6,9 +6,10 @@ public class Zona {
     private String nombre;
     private String represa;
 
-    public Zona(String nombre, String represa) {
+    public Zona(String nombre, String represa, LDoble_Manzana manzana) {
         this.nombre = nombre;
         this.represa = represa;
+        this.listaDM.add(manzana);
     }
 
     public Zona() {
@@ -41,7 +42,9 @@ public class Zona {
         System.out.println("************");
     }
 
-
+    public void adicionarManzana(LDoble_Manzana manzana){
+        listaDM.add(manzana);
+    }
     public List<LDoble_Manzana> getListaDM() {
         return listaDM;
     }
