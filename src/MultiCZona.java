@@ -39,7 +39,6 @@ public class MultiCZona {
         int i;
         nc = n;
         for (i = 1; i <= n; i++) {
-            System.out.printf("Nro. de Zonas %d:", i);
             Scanner keyboard = new Scanner(System.in);
             int numeroE = keyboard.nextInt();
             cm[i].llenar(numeroE);

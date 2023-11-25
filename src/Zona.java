@@ -24,9 +24,9 @@ public class Zona {
         System.out.print("Cuantas Manzanas tiene la zona: ");
         System.out.println("-------------------");
         for (int i = 0; i < nn; i++) {
-            System.out.println("Manzana: " + i+1);
+            System.out.println("Manzana: " + (i+1));
             LDoble_Manzana manzana = new LDoble_Manzana();
-            System.out.print("cuantas casas tiene la manzana:");
+            System.out.print("Cuantas casas tiene la manzana:");
             int k = scanner.nextInt();
             manzana.leer(k);
             listaDM.add(manzana);
