@@ -29,13 +29,14 @@ public class CCircularZona {
 
 
     void adicionar(Zona elem) {
-        if (!esllena()) {
-
+        if (nroelem() < max - 1) {
             fin = (fin + 1) % max;
             vecZona[fin] = elem;
-        } else
+        } else {
             System.out.println("Cola circular llena");
+        }
     }
+
 
 
     Zona eliminar() {
@@ -51,7 +52,7 @@ public class CCircularZona {
     }
 
 
-    void mostrar() {
+    public void mostrar() {
         Zona elem;
         if (esvacia())
             System.out.println("Cola vacia xxx");

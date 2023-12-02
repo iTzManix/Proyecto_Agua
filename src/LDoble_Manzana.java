@@ -28,8 +28,9 @@ public class LDoble_Manzana {
             setPrincipio(nodo);
         else{
             NodoC w = getPrincipio();
-            while (w.getSiguiente()!=null)
+            while (w.getSiguiente()!=null) {
                 w = w.getSiguiente();
+            }
             w.setSiguiente(nodo);
             nodo.setAnterior(w);
         }

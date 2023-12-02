@@ -5,7 +5,7 @@ public class MultiCZona {
     int nc;
     MultiCZona() {
         int i;
-        for (i = 1; i < 20; i++)
+        for (i = 1; i <= 20; i++)
             cm[i] = new CCircularZona();
     }
     int NroColas() {
@@ -21,9 +21,10 @@ public class MultiCZona {
             return true;
         return false;
     }
-    void adicionar(int i, Zona elem) {
-        if (!cm[i].esllena())
+    public void adicionar(int i, Zona elem) {
+        if (!cm[i].esllena()){
             cm[i].adicionar(elem);
+            nc=i;}
         else
             System.out.print("La MultiCola de Zonas " + i + " esta llena");
     }
@@ -44,12 +45,12 @@ public class MultiCZona {
             cm[i].llenar(numeroE);
         }
     }
-    void mostrar() {
+    public void mostrar() {
         int i;
         System.out.println("--------------------------");
         System.out.println("DATOS DE LA MULTIPLE COLA DE ZONAS");
         System.out.println("--------------------------");
-        for (i = 1; i <= nc; i++) {
+        for (i = 1; i <= this.nc; i++) {
             System.out.println("Datos Cola Circular Zona " + i + " ");
             cm[i].mostrar();
         }

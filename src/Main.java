@@ -18,6 +18,7 @@ public class Main
         listaManzana2.adicion(casa4);
         listaManzana2.adicion(casa5);
         listaManzana2.adicion(casa6);
+        listaManzana2.mostrar();
 
         Zona zona1 = new Zona("Alto las Delicias", "Hampaturi", listaManzana1);
         zona1.adicionarManzana(listaManzana2);

@@ -16,7 +16,6 @@ public class Casa {
     }
     public void leer() {
         System.out.println("-------CASA-------");
-
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Nombre del propietario: ");
         this.propietario = keyboard.nextLine();
