@@ -18,7 +18,7 @@ public class MainMenu2 extends JFrame {
         this.setSize(600, 450);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        ImageIcon image = new ImageIcon("C:/Users/Mauricio/IdeaProjects/JAVAGUI/src/logo.jpg"); //this create an Image Icon
+        ImageIcon image = new ImageIcon("./Proyecto_Agua/src/logo.jpg"); //this create an Image Icon
         this.setIconImage(image.getImage());
         setLocationRelativeTo(null); // Centrar en la pantalla
 
@@ -71,11 +71,9 @@ public class MainMenu2 extends JFrame {
             int nroEmp = Integer.parseInt(JOptionPane.showInputDialog("Numero de Empresas del municipio?"));
             new LecturaCasas();
 
-//            this.multiZona.llenar(nroColas);
 //
             int nroEmpresas = Integer.parseInt(JOptionPane.showInputDialog("Nro de Empresas del Municipio:"));
             new LecturaEmpresa();
-//            this.listaEmpresa.leer(nroEmpresas);
 //
 //            JOptionPane.showMessageDialog(null, "Datos del municipio leídos correctamente.\n\n");
         }
