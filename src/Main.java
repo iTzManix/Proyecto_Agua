@@ -167,9 +167,9 @@ public class Main
             if (node.getNombre().equalsIgnoreCase(nombre)) {
                 NodoSu nodeS = node.getListaS().getPrincipio();
                 while (nodeS != null) {
-                    System.out.println(nodeS.getConsumo());
+                    System.out.println("Antes:" + nodeS.getConsumo());
                     nodeS.setConsumo(nodeS.getConsumo()*20/100);
-                    System.out.println(nodeS.getConsumo());
+                    System.out.println("Ahora" + nodeS.getConsumo());
                     nodeS = nodeS.getSiguiente();
                 }
             }

@@ -36,7 +36,7 @@ public class Evento {
                     if (zona.getNombre().equalsIgnoreCase(nombreZona)) {
                         eventos.adicionar(zona);
                         zonaEncontrada = true;
-                        System.out.println("Zona añadida con exito!");
+                        System.out.println("Zona "+zona.getNombre()+ " añadida con exito y asistirá al evento!");
                         break;
                     }
                 }
