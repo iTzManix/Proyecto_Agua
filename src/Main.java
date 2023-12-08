@@ -63,19 +63,18 @@ public class Main
         pilaR1.adicionar(represa1);
         pilaR1.adicionar(represa2);
 
-        CSimpleEven colaEventos = new CSimpleEven();
-
+        CSAlmacena almacenaEventos = new CSAlmacena();
 
         Municipio municipio1 = new Municipio(multiC1,pilaR1,"LA PAZ", listaEmp1);
         municipio1.mostrar();
 
         System.out.println("\n----Añadir Eventos----");
-        Eventos(colaEventos, multiC1);
+        Eventos(almacenaEventos, multiC1);
 
         System.out.println("\nCasas sin agua en el municipio: " + problemaAguaRecursivo(multiC1,1));
 
         System.out.println("\n----Buscar Zona en Evento----");
-        buscaZonaX(colaEventos);
+        buscaZonaX(almacenaEventos);
 
         System.out.println("\n----Empresas con un consumo mayor X----");
         empresasRecursivo(listaEmp1.getPrincipio(), 800);
@@ -87,37 +86,11 @@ public class Main
         municipio.leer();
         municipio.mostrar();
     }
-    public static void Eventos(CSimpleEven colaE, MultiCZona multi) {
+    public static void Eventos(CSAlmacena even, MultiCZona multi) {
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Ingrese el numero de zonas: ");
-        int numZonas = teclado.nextInt();
-        teclado.nextLine();
-        for (int k = 0; k < numZonas; k++) {
-            System.out.println("Nombre de la zona:");
-            String nombreZona = teclado.nextLine();
-            boolean zonaEncontrada = false;
-            for (int i = 1; i <= multi.NroColas(); i++) {
-                CCircularZona colaAux = new CCircularZona();
-                while (!multi.esvacia(i)) {
-                    Zona zona = multi.eliminar(i);
-                    colaAux.adicionar(zona);
-
-                    if (zona.getNombre().equalsIgnoreCase(nombreZona)) {
-                        colaE.adicionar(zona);
-                        zonaEncontrada = true;
-                        System.out.println("Zona añadida con exito!");
-                        break;
-                    }
-                }
-                multi.vaciar(i, colaAux);
-                if (zonaEncontrada) {
-                    break;
-                }
-            }
-            if (!zonaEncontrada) {
-                System.out.println("La zona no existe");
-            }
-        }
+        System.out.println("Cuantos eventos agregará?");
+        int num = teclado.nextInt();
+        even.llenar(multi, num);
     }
     public static int problemaAguaRecursivo(MultiCZona multi, int index) {
         if (multi.esvacia(index)) {
@@ -141,18 +114,25 @@ public class Main
         }
         return contador;
     }
-    public static void buscaZonaX(CSimpleEven colaE){
+    public static void buscaZonaX(CSAlmacena colaA){
         Scanner teclado=new Scanner(System.in);
         String x = teclado.nextLine();
-        CSimpleEven colaAux = new CSimpleEven();
-        while (colaE.esvacia()){
-            Zona zona = colaE.eliminar();
-            if(zona.getNombre().equalsIgnoreCase(x)){
-                System.out.println("Zona Encontrada!\nAsistirá al evento");
+        CSimpleEven colaAuxE = new CSimpleEven();
+        CSAlmacena colaAux = new CSAlmacena();
+        while (!colaA.esvacia()){
+            Evento even = colaA.eliminar();
+            CSimpleEven colaE = even.getEventos();
+            while (!colaE.esvacia()){
+                Zona zona = colaE.eliminar();
+                if (zona.getNombre().equalsIgnoreCase(x)){
+                    System.out.println("La Zona " + x + " asistirá al evento");
+                }
+                colaAuxE.adicionar(zona);
             }
-            colaAux.adicionar(zona);
+            colaE.vaciar(colaAuxE);
+            colaAux.adicionar(even);
         }
-        colaE.vaciar(colaAux);
+        colaA.vaciar(colaAux);
     }
     public static void empresasRecursivo(NodoEmp node, int cons){
         if(node!= null){
@@ -180,6 +160,7 @@ public class Main
     }
     public static void reducirPorcentaje(LDoble_Empresa list){
         Scanner teclado = new Scanner(System.in);
+        System.out.println("nombre de la empresa: ");
         String nombre = teclado.nextLine();
         NodoEmp node = list.getPrincipio();
         while (node != null){
