@@ -116,6 +116,7 @@ public class Main
     }
     public static void buscaZonaX(CSAlmacena colaA){
         Scanner teclado=new Scanner(System.in);
+        System.out.println("Zona a buscar: ");
         String x = teclado.nextLine();
         CSimpleEven colaAuxE = new CSimpleEven();
         CSAlmacena colaAux = new CSAlmacena();
@@ -167,9 +168,9 @@ public class Main
             if (node.getNombre().equalsIgnoreCase(nombre)) {
                 NodoSu nodeS = node.getListaS().getPrincipio();
                 while (nodeS != null) {
-                    System.out.println("Antes:" + nodeS.getConsumo());
-                    nodeS.setConsumo(nodeS.getConsumo()*20/100);
-                    System.out.println("Ahora" + nodeS.getConsumo());
+                    System.out.println("Antes: " + nodeS.getConsumo());
+                    nodeS.setConsumo((nodeS.getConsumo()-nodeS.getConsumo()*20/100));
+                    System.out.println("Ahora: " + nodeS.getConsumo());
                     nodeS = nodeS.getSiguiente();
                 }
             }

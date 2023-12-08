@@ -1,7 +1,7 @@
 import java.util.*;
 public class Evento {
     private String nombre, tipo;
-    private CSimpleEven eventos;
+    private CSimpleEven eventos = new CSimpleEven();
 
     public Evento(String nombre, String tipo, CSimpleEven eventos) {
         this.nombre = nombre;

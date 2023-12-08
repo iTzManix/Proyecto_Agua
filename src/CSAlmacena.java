@@ -78,10 +78,9 @@ public class CSAlmacena {
     }
     void llenar (MultiCZona multi, int n)
     {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("\nNumero de eventos que desea añadir:");
         for (int i = 1 ; i <= n ; i++)
         {
+            Scanner keyboard = new Scanner(System.in);
             Evento evento = new Evento();
             evento.leer(multi);
             adicionar(evento);
