@@ -68,19 +68,19 @@ public class Main
         Municipio municipio1 = new Municipio(multiC1,pilaR1,"LA PAZ", listaEmp1);
         municipio1.mostrar();
 
-        System.out.println("\n----Añadir Eventos----");
-        Eventos(almacenaEventos, multiC1);
-
-        System.out.println("\nCasas sin agua en el municipio: " + problemaAguaRecursivo(multiC1,1));
-
-        System.out.println("\n----Buscar Zona en Evento----");
-        buscaZonaX(almacenaEventos);
-
-        System.out.println("\n----Empresas con un consumo mayor X----");
-        empresasRecursivo(listaEmp1.getPrincipio(), 800);
-
-        System.out.println("\nReducir porcentaje de Empresa X");
-        reducirPorcentaje(listaEmp1);
+//        System.out.println("\n----Añadir Eventos----");
+//        Eventos(almacenaEventos, multiC1);
+//
+//        System.out.println("\nCasas sin agua en el municipio: " + problemaAguaRecursivo(multiC1,1));
+//
+//        System.out.println("\n----Buscar Zona en Evento----");
+//        buscaZonaX(almacenaEventos);
+//
+//        System.out.println("\n----Empresas con un consumo mayor X----");
+//        empresasRecursivo(listaEmp1.getPrincipio(), 800);
+//
+//        System.out.println("\nReducir porcentaje de Empresa X");
+//        reducirPorcentaje(listaEmp1);
 
         Municipio municipio = new Municipio();
         municipio.leer();
