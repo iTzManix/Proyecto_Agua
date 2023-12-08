@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class MultiCZona {
@@ -57,5 +58,12 @@ public class MultiCZona {
     }
     int nroElem(int i) {
         return (cm[i].nroelem());
+    }
+    void vaciar(int i, CCircularZona Z)
+    {
+        cm[i].vaciar(Z);
+    }
+    void vaciar(int i, int j) {
+        cm[i].vaciar(cm[j]);
     }
 }

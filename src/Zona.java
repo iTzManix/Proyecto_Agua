@@ -39,7 +39,7 @@ public class Zona {
         for (LDoble_Manzana manzana : listaDM) {
             manzana.mostrar();
         }
-        System.out.println("************");
+        System.out.println("");
     }
 
     public void adicionarManzana(LDoble_Manzana manzana){

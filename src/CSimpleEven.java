@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class CCircularZona {
+public class CSimpleEven {
     private int max = 1000;
     private Zona vecZona[] = new Zona[max + 1];
     private int ini, fin;
 
-    CCircularZona() {
+    CSimpleEven() {
         ini = fin = 0;
     }
 
@@ -83,7 +83,7 @@ public class CCircularZona {
             adicionar(zonax);
         }
     }
-    void vaciar (CCircularZona a)
+    void vaciar (CSimpleEven a)
     {
         while (!a.esvacia ())
             adicionar (a.eliminar());

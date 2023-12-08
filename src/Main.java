@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main
 {
     public static void main(String[] args)
@@ -18,7 +20,6 @@ public class Main
         listaManzana2.adicion(casa4);
         listaManzana2.adicion(casa5);
         listaManzana2.adicion(casa6);
-        listaManzana2.mostrar();
 
         Zona zona1 = new Zona("Alto las Delicias", "Hampaturi", listaManzana1);
         zona1.adicionarManzana(listaManzana2);
@@ -62,11 +63,137 @@ public class Main
         pilaR1.adicionar(represa1);
         pilaR1.adicionar(represa2);
 
+        CSimpleEven colaEventos = new CSimpleEven();
+
+
         Municipio municipio1 = new Municipio(multiC1,pilaR1,"LA PAZ", listaEmp1);
         municipio1.mostrar();
+
+        System.out.println("\n----Añadir Eventos----");
+        Eventos(colaEventos, multiC1);
+
+        System.out.println("\nCasas sin agua en el municipio: " + problemaAguaRecursivo(multiC1,1));
+
+        System.out.println("\n----Buscar Zona en Evento----");
+        buscaZonaX(colaEventos);
+
+        System.out.println("\n----Empresas con un consumo mayor X----");
+        empresasRecursivo(listaEmp1.getPrincipio(), 800);
+
+        System.out.println("\nReducir porcentaje de Empresa X");
+        reducirPorcentaje(listaEmp1);
 
         Municipio municipio = new Municipio();
         municipio.leer();
         municipio.mostrar();
+    }
+    public static void Eventos(CSimpleEven colaE, MultiCZona multi) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Ingrese el numero de zonas: ");
+        int numZonas = teclado.nextInt();
+        teclado.nextLine();
+        for (int k = 0; k < numZonas; k++) {
+            System.out.println("Nombre de la zona:");
+            String nombreZona = teclado.nextLine();
+            boolean zonaEncontrada = false;
+            for (int i = 1; i <= multi.NroColas(); i++) {
+                CCircularZona colaAux = new CCircularZona();
+                while (!multi.esvacia(i)) {
+                    Zona zona = multi.eliminar(i);
+                    colaAux.adicionar(zona);
+
+                    if (zona.getNombre().equalsIgnoreCase(nombreZona)) {
+                        colaE.adicionar(zona);
+                        zonaEncontrada = true;
+                        System.out.println("Zona añadida con exito!");
+                        break;
+                    }
+                }
+                multi.vaciar(i, colaAux);
+                if (zonaEncontrada) {
+                    break;
+                }
+            }
+            if (!zonaEncontrada) {
+                System.out.println("La zona no existe");
+            }
+        }
+    }
+    public static int problemaAguaRecursivo(MultiCZona multi, int index) {
+        if (multi.esvacia(index)) {
+            return 0;
+        } else {
+            CCircularZona colaAux = new CCircularZona();
+            Zona zona = multi.eliminar(index);
+            colaAux.adicionar(zona);
+            int contador = contarRecursivo(zona.getListaDM().get(0).getPrincipio(), 0);
+            multi.vaciar(index, colaAux);
+            return contador + problemaAguaRecursivo(multi, index+1);
+        }
+    }
+
+    private static int contarRecursivo(NodoC nodo, int contador) {
+        if (nodo != null) {
+            if (nodo.getCasa().isServicioAgua()) {
+                contador++;
+            }
+            return contarRecursivo(nodo.getSiguiente(), contador);
+        }
+        return contador;
+    }
+    public static void buscaZonaX(CSimpleEven colaE){
+        Scanner teclado=new Scanner(System.in);
+        String x = teclado.nextLine();
+        CSimpleEven colaAux = new CSimpleEven();
+        while (colaE.esvacia()){
+            Zona zona = colaE.eliminar();
+            if(zona.getNombre().equalsIgnoreCase(x)){
+                System.out.println("Zona Encontrada!\nAsistirá al evento");
+            }
+            colaAux.adicionar(zona);
+        }
+        colaE.vaciar(colaAux);
+    }
+    public static void empresasRecursivo(NodoEmp node, int cons){
+        if(node!= null){
+            if (nodoSucRecursivo(node.getListaS().getPrincipio(), cons)){
+                System.out.println(node.getNombre());
+            }
+            else {
+                empresasRecursivo(node.getSiguiente(), cons);
+            }
+        }
+        else {
+            System.out.println("No hay empresas con un consumo mayor a " + cons);
+        }
+    }
+    public static boolean nodoSucRecursivo(NodoSu node, int cons){
+        if(node!= null){
+            if (node.getConsumo()> cons){
+                return true;
+            }
+            else{
+                nodoSucRecursivo(node.getSiguiente(), cons);
+            }
+        }
+        return false;
+    }
+    public static void reducirPorcentaje(LDoble_Empresa list){
+        Scanner teclado = new Scanner(System.in);
+        String nombre = teclado.nextLine();
+        NodoEmp node = list.getPrincipio();
+        while (node != null){
+            if (node.getNombre().equalsIgnoreCase(nombre)) {
+                NodoSu nodeS = node.getListaS().getPrincipio();
+                while (nodeS != null) {
+                    System.out.println(nodeS.getConsumo());
+                    nodeS.setConsumo(nodeS.getConsumo()*20/100);
+                    System.out.println(nodeS.getConsumo());
+                    nodeS = nodeS.getSiguiente();
+                }
+            }
+            node = node.getSiguiente();
+        }
+        System.out.println("A la empresa " + nombre + " se le redujo el consumo de 20%");
     }
 }
